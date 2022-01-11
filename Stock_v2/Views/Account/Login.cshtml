@@ -1,0 +1,43 @@
+﻿@model Stock_v2.Models.ViewModels.LoginViewModel
+
+    <h2>Log in</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form method="post" asp-action="Login" asp-controller="Account">
+        <hr />
+
+        <div class="form-group row">
+            <label class="col-md-2" asp-for="Email"></label>
+            <div class="col-md-6">
+                <input class="form-control" asp-for="Email" />
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-2" asp-for="Password"></label>
+            <div class="col-md-6">
+                <input class="form-control" asp-for="Password" />
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group-row">
+            <input class="checkbox offset-md-2" asp-for="RememberMe" />
+            <label class="col-6" asp-for="RememberMe"></label>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 offset-md-2">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+            <p class="col-md-10 offset-md-2">
+                <a asp-action="Register">Sign up</a>
+            </p>
+        </div>
+
+    </form>
+
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial.cshtml" />
+} 
